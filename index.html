@@ -44,7 +44,6 @@
     <div id="slider">
       <p>Lagi ngapain?</p>
       <p>Pasti lagi mikirin aku hehe😁</p>
-      <p>kamu udh makan belum?</p>
       <p>Semangat ya hari ini☺️</p>
       <p>Aku punya sesuatu nih buat kamu🎁</p>
 
@@ -52,7 +51,7 @@
     </div>
 
     <script>
-      musik = "Musik.mp3";
+      musik = "musik.mp3";
       foto = "Gambar.gif";
       background = "background.jpg";
       noWhatsapp = "6285211759216";
@@ -63,17 +62,20 @@
 
       async function popUp() {
         await swalo.fire({
-          title: "Aku Sayang Kamu",
+          title: "Kamu jangan marah-marah lagi ya",
           imageUrl: "Stiker 1.gif",
         });
-        await swalo.fire({ title: "Cinta Kamu", imageUrl: "Stiker 3.gif" });
         await swalo.fire({
-          title: "Kangen Kamu",
+          title: "Nanti Lucu nya ilang",
+          imageUrl: "Stiker 3.gif",
+        });
+        await swalo.fire({
+          title: "Aku kangen tau sama kamu",
           imageUrl: "Stiker 2.gif",
         });
         await swalo.fire({
-          title: "Pap imut ny dong",
-          imageUrl: "Stiker 4.gif",
+          title: "Senyum dong Amell",
+          imageUrl: "Stiker 7.gif",
         });
         kirimPesan();
       }
