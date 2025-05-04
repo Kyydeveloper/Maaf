@@ -29,7 +29,8 @@
     </div>
     <div class="open">
       <div>
-        <div class="lope">
+        <!-- Tombol Love yang menjadi kontrol untuk audio -->
+        <div class="lope" id="loveBtn">
           <i class="love material-icons-sharp"> favorite </i>
         </div>
         <h3>Pencet Love nya</h3>
@@ -51,14 +52,30 @@
     </div>
 
     <script>
-      musik = "musik.mp3";
+      musik = "musik.mp3"; // Pastikan file musik ada di repositori yang sama
       foto = "Gambar.gif";
       background = "background.jpg";
       noWhatsapp = "6285211759216";
 
-      // Fungsi untuk memutar musik secara otomatis
-      var audio = new Audio(musik);
-      audio.play();
+      var audio;
+      var isPlaying = false; // Variabel untuk melacak status pemutaran
+
+      // Fungsi untuk memulai atau menjeda audio saat love diklik
+      function toggleAudio() {
+        if (!isPlaying) {
+          audio = new Audio(musik);
+          audio.play();
+          isPlaying = true; // Tandai bahwa musik sedang diputar
+          document.querySelector(".love").innerText = "favorite_border"; // Ganti icon jadi 'heart outline' setelah diputar
+        } else {
+          audio.pause();
+          isPlaying = false; // Musik dijeda
+          document.querySelector(".love").innerText = "favorite"; // Ganti kembali icon jadi 'heart full'
+        }
+      }
+
+      // Menambahkan event listener untuk klik love
+      document.getElementById("loveBtn").addEventListener("click", toggleAudio);
 
       async function popUp() {
         await swalo.fire({
