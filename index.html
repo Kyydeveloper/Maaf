@@ -29,7 +29,7 @@
     </div>
     <div class="open">
       <div>
-        <div class="lope">
+        <div class="lope" id="tombolLove">
           <i class="love material-icons-sharp"> favorite </i>
         </div>
         <h3>Pencet Love nya</h3>
@@ -56,9 +56,17 @@
       background = "background.jpg";
       noWhatsapp = "6285211759216";
 
-      // Fungsi untuk memutar musik secara otomatis
+      // Fungsi untuk memutar musik hanya setelah tombol love diklik
       var audio = new Audio(musik);
-      audio.play();
+      audio.preload = "auto"; // Agar audio dimuat lebih cepat
+
+      // Menunggu aksi klik pada tombol love
+      document
+        .getElementById("tombolLove")
+        .addEventListener("click", function () {
+          audio.play(); // Suara dimainkan setelah interaksi
+          // Menampilkan popup
+        });
 
       async function popUp() {
         await swalo.fire({
