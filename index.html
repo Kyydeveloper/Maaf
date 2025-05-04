@@ -36,7 +36,7 @@
       </div>
     </div>
     <div id="bg"></div>
-    <img src="" alt="" id="fotoku" />
+    <img src="Gambar.gif" alt="Gambar saya" id="fotoku" />
 
     <h2 id="hai">Hai Amel😊😊!</h2>
     <h3 id="hia">Scrool kesamping ya</h3>
@@ -50,25 +50,35 @@
 
       <p>Klik Love nya<span>❤️</span></p>
     </div>
-  </body>
-  <script>
-    musik = "Musik.mp3";
-    foto = "Gambar.gif";
-    background = "background.jpg";
-    noWhatsapp = "6285211759216";
 
-    async function popUp() {
-      await swalo.fire({ title: "Aku Sayang Kamu", imageUrl: "Stiker 1.gif" });
-      await swalo.fire({ title: "Cinta Kamu", imageUrl: "Stiker 3.gif" });
-      await swalo.fire({
-        title: "Kangen Kamu",
-        imageUrl: "Stiker 2.gif",
-      });
-      await swalo.fire({ title: "Pap imut ny dong", imageUrl: "Stiker 4.gif" });
-      kirimPesan();
-      // Yang mau tanpa wm, custom tampilan, bisa order web ucapan di Deka Tutorial (DM IG @deka_tutorial)
-      // ======================================
-    }
-    DekaTutorial(musik, foto, background, noWhatsapp);
-  </script>
+    <script>
+      musik = "Musik.mp3";
+      foto = "Gambar.gif";
+      background = "background.jpg";
+      noWhatsapp = "6285211759216";
+
+      // Fungsi untuk memutar musik secara otomatis
+      var audio = new Audio(musik);
+      audio.play();
+
+      async function popUp() {
+        await swalo.fire({
+          title: "Aku Sayang Kamu",
+          imageUrl: "Stiker 1.gif",
+        });
+        await swalo.fire({ title: "Cinta Kamu", imageUrl: "Stiker 3.gif" });
+        await swalo.fire({
+          title: "Kangen Kamu",
+          imageUrl: "Stiker 2.gif",
+        });
+        await swalo.fire({
+          title: "Pap imut ny dong",
+          imageUrl: "Stiker 4.gif",
+        });
+        kirimPesan();
+      }
+
+      DekaTutorial(musik, foto, background, noWhatsapp);
+    </script>
+  </body>
 </html>
